@@ -1,3 +1,13 @@
-<div *ngFor="let lista of aoInserirRegistros">
-  <P>Projeto: {{ lista?.nome }}</P>
-</div>
+<table class="tabela">
+  <thead class="tabela__cabecalho">
+    <th class="tabela__cabecalho__conteudo"> Nome</th>
+  </thead>
+    <tbody *ngIf="aoInserirRegistros?.length > 0; else listaVazia" >
+      <tr class="tabela__linha" *ngFor="let lista of aoInserirRegistros">
+        <td class="tabela__conteudo">Nome: {{ lista?.nome }}</td>
+      </tr>
+    </tbody>
+</table>
+<ng-template #listaVazia>
+  <p>Nenhuma operação encontrada!</p>
+</ng-template>

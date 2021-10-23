@@ -1,3 +1,4 @@
+import { ProjetoService } from './services/projeto.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,10 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SCP-FRONTEND';
-  aoInserirRegistros: any[] = [];
+
+  constructor(private service: ProjetoService) {}
 
   inserir($event){
-    console.log($event)
-    this.aoInserirRegistros.push($event);
+    this.service.novo($event);//recebe o evento e propaga para o service
   }
 }

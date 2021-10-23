@@ -1,3 +1,4 @@
+import { ProjetoService } from './../../../../services/projeto.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +10,10 @@ export class ProjetoDetalheComponent implements OnInit {
 
   @Input() aoInserirRegistros: any[];
 
-  constructor() { }
+  constructor(private service: ProjetoService) { }
 
   ngOnInit(): void {
+     this.aoInserirRegistros = this.service.projeto;
   }
 
 }
