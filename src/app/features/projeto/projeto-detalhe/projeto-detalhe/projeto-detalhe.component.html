@@ -1,13 +1,16 @@
-<table class="tabela">
-  <thead class="tabela__cabecalho">
-    <th class="tabela__cabecalho__conteudo"> Nome</th>
-  </thead>
-    <tbody *ngIf="aoInserirRegistros?.length > 0; else listaVazia" >
-      <tr class="tabela__linha" *ngFor="let lista of aoInserirRegistros">
-        <td class="tabela__conteudo">Nome: {{ lista?.nome }}</td>
-      </tr>
-    </tbody>
-</table>
-<ng-template #listaVazia>
-  <p>Nenhuma operação encontrada!</p>
-</ng-template>
+<section class="container">
+  <h2 class="titulo">Detalhe</h2>
+  <table class="tabela">
+    <thead class="tabela__cabecalho">
+      <th class="tabela__cabecalho__conteudo"> Nome</th>
+    </thead>
+      <tbody *ngIf="projetos?.length > 0; else listaVazia" >
+        <tr class="tabela__linha" *ngFor="let lista of projetos">
+          <td class="tabela__conteudo">Nome: {{ lista?.nome }}</td>
+        </tr>
+      </tbody>
+  </table>
+  <ng-template #listaVazia>
+    <p>Nenhuma operação encontrada!</p>
+  </ng-template>
+</section>

@@ -1,3 +1,4 @@
+import { Projeto } from './../../../../models/projeto.models';
 import { ProjetoService } from './../../../../services/projeto.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -8,12 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProjetoDetalheComponent implements OnInit {
 
-  @Input() aoInserirRegistros: any[];
+  projetos: any[];
 
   constructor(private service: ProjetoService) { }
 
   ngOnInit(): void {
-     this.aoInserirRegistros = this.service.projeto;
+     this.service.todas().subscribe((projetos: Projeto[]) =>{
+       console.table(projetos);
+       this.projetos = projetos;
+     });
   }
 
 }

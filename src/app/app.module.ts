@@ -9,6 +9,7 @@ import { ProjetoDetalheComponent } from './features/projeto/projeto-detalhe/proj
 import { ProjetoPesquisaComponent } from './features/projeto/projeto-pesquisa/projeto-pesquisa.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localePt, 'pt');
 
@@ -22,7 +23,8 @@ registerLocaleData(localePt, 'pt');
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt' },

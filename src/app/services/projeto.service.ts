@@ -1,12 +1,16 @@
+import { Projeto } from './../models/projeto.models';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjetoService {
   private listaProjeto: any[];
+  private url = 'http://localhost:3000/projetos';
 
-  constructor() {
+  constructor(private httpClient: HttpClient ) {
     this.listaProjeto = [];
   }
 
@@ -14,9 +18,14 @@ export class ProjetoService {
     return this.listaProjeto;
   }
 
-  novo(projeto: any){
+  todas(): Observable<Projeto[]>{
+    return this.httpClient.get<Projeto[]>(this.url);
+  }
+
+  novo(projeto: Projeto): Observable<Projeto>{
     this.hidratar(projeto);
-    this.listaProjeto.push(projeto);
+
+    return this.httpClient.post<Projeto>(this.url, projeto);
   }
 
   //recursos adicionais

@@ -11,7 +11,4 @@ export class AppComponent {
 
   constructor(private service: ProjetoService) {}
 
-  inserir($event){
-    this.service.novo($event);//recebe o evento e propaga para o service
-  }
 }

@@ -1,5 +1,10 @@
-<app-projeto-novo (aoInserir)="inserir($event)"></app-projeto-novo>
+<header>
+  <a routerLink="projeto-detalhe">Detalhe</a>
+  <a routerLink="projeto-novo" routerLinkActive="ativo">Novo</a>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
 
-<app-projeto-detalhe></app-projeto-detalhe>
 
 
