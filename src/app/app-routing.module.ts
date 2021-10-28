@@ -1,13 +1,27 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { ProjetoDetalheComponent } from './features/projeto/projeto-detalhe/projeto-detalhe/projeto-detalhe.component';
 import { ProjetoNovoComponent } from './features/projeto/projeto-novo/projeto-novo.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 
-  { path: '', redirectTo: 'projeto-detalhe', pathMatch: 'full'},
-  { path: 'projeto-novo', component: ProjetoNovoComponent },
-  { path: 'projeto-detalhe', component: ProjetoDetalheComponent }
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'painel-principal',
+  },
+  {
+    path: 'painel-principal',
+    loadChildren: ()=> import('./features/painel-principal/painel/painel.module').then((m)=> m.PainelPrincipalModule),
+  },
+  {
+    path: 'projeto-novo',
+    component: ProjetoNovoComponent
+  },
+  {
+    path: 'projeto-detalhe',
+    component: ProjetoDetalheComponent
+  }
 
 ];
 
