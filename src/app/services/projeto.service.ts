@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProjetoService {
+
   private listaProjeto: any[];
   private url = 'http://localhost:3000/projetos';
 
@@ -31,6 +32,10 @@ export class ProjetoService {
   //recursos adicionais
   private hidratar(projeto: any){
     projeto.data = new Date();
+  }
+
+  getProjetos(){
+    return ['Projeto 1', 'Projeto 2', 'Projeto 3'];
   }
 
 }

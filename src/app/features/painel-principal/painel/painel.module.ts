@@ -1,19 +1,21 @@
+import { MensagemModule } from './../../componentes/mensagem/mensagem.module';
 import { FormsModule } from '@angular/forms';
-import { PainelPrincipalRoutingModule } from './painel-routing.module';
+import { PainelRoutingModule } from './painel-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PainelPrincipalComponent } from './painel.component';
+import { PainelComponent } from './painel.component';
 import { LoginComponent } from '../login/login.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    PainelPrincipalRoutingModule,
-    FormsModule
+    PainelRoutingModule,
+    FormsModule,
+    MensagemModule
   ],
-  exports: [PainelPrincipalComponent],
+  exports: [PainelComponent],
   declarations: [
-    PainelPrincipalComponent,
+    PainelComponent,
     LoginComponent]
 })
-export class PainelPrincipalModule { }
+export class PainelModule { }

@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PainelPrincipalModule } from './features/painel-principal/painel/painel.module';
 import { ProjetoDetalheComponent } from './features/projeto/projeto-detalhe/projeto-detalhe/projeto-detalhe.component';
 import { ProjetoNovoComponent } from './features/projeto/projeto-novo/projeto-novo.component';
 import { ProjetoPesquisaComponent } from './features/projeto/projeto-pesquisa/projeto-pesquisa.component';
@@ -25,8 +24,7 @@ registerLocaleData(localePt, 'pt');
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    PainelPrincipalModule
+    HttpClientModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt' },

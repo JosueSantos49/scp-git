@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjetoDetalheComponent } from './features/projeto/projeto-detalhe/projeto-detalhe/projeto-detalhe.component';
@@ -12,7 +13,11 @@ const routes: Routes = [
   },
   {
     path: 'painel-principal',
-    loadChildren: ()=> import('./features/painel-principal/painel/painel.module').then((m)=> m.PainelPrincipalModule),
+    loadChildren: ()=> import('./features/painel-principal/painel/painel.module').then((m)=> m.PainelModule),
+  },
+  {
+    path: 'projeto-lista',
+    loadChildren: ()=> import('./features/projeto/projeto-lista/projeto-lista.module').then((m)=> m.ProjetoListaModule),
   },
   {
     path: 'projeto-novo',
